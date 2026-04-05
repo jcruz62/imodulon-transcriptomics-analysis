@@ -13,21 +13,21 @@ These iModulons represent distinct regulatory groups, including known transcript
 
 ## Project Structure
 
-### Phase 1 — iModulonMiner Execution
+### Phase 1: iModulonMiner Execution
 - Ran ICA to generate M (gene weight) and A (activity) matrices  
 - Identified iModulon gene sets and evaluated explained variance  
 
-### Phase 2 — Metadata Curation & Database Integration
+### Phase 2: Metadata Curation & Database Integration
 - Curated metadata across 136 projects and 705 conditions  
 - Mapped UniProt IDs with ~100% coverage  
 - Uploaded dataset to iModulonDB with successful validation  
 
-### Phase 3 — Biological Curation
+### Phase 3: Biological Curation
 - Annotated iModulons with functions and regulators  
 - Identified known regulons (e.g., BfmR, Fur, PmrA)  
 - Characterized novel and partially annotated gene modules  
 
-### Phase 4 — Deep Analysis & Interpretation
+### Phase 4: Deep Analysis & Interpretation
 - Performed correlation analysis, PCA, and clustering  
 - Identified condition-specific activity patterns  
 - Developed biological hypotheses from regulatory relationships  
