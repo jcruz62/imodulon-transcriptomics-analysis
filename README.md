@@ -1,8 +1,7 @@
 # iModulon Transcriptomics Analysis of Acinetobacter baumannii
 
 ## Overview
-This project applies Independent Component Analysis (ICA) to a large transcriptomic dataset to identify independently regulated gene modules (iModulons) in *Acinetobacter baumannii*. Using 1,498 RNA-seq samples collected from 136 independent studies, this analysis identifies transcriptional patterns that explain how the bacterium responds to different environmental conditions, including antibiotic stress and virulence-related processes.
-
+This project applies Independent Component Analysis (ICA) to a large transcriptomic dataset to identify independently regulated gene modules (iModulons) in *Acinetobacter baumannii*. Using 1,498 RNA-seq samples collected from 136 independent studies, this analysis identifies transcriptional patterns that explain how the bacterium responds to different environmental conditions, including antibiotic stress and infection related processes.
 ## Dataset & ICA Results
 - **1,498 RNA-seq samples**
 - **136 experimental projects**
@@ -42,7 +41,7 @@ These iModulons represent distinct regulatory groups, including known transcript
   A negative correlation (r = -0.337) was observed between Arsenic (IM_104) and Type-IV-Pili (IM_45), indicating a potential trade-off between detoxification and surface motility.
 
 - **Novel biological hypothesis**  
-  These results suggest that arsenic exposure may suppress biofilm formation by reducing pili-related gene activity. :contentReference[oaicite:2]{index=2}
+  These results suggest that arsenic exposure may suppress biofilm formation by reducing pili-related gene activity.
 
 ## Why This Matters
 
