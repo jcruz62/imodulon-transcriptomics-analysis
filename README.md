@@ -1,5 +1,7 @@
 # iModulon Transcriptomics of *Acinetobacter baumannii*
 
+**Full write-up:** [REPORT.md](REPORT.md) (JAMA-style: key points, structured abstract, methods, results, discussion)
+
 **Author:** Jade Cruz
 
 *A. baumannii* is a multidrug-resistant, hospital-acquired pathogen. This project uses **Independent Component Analysis (ICA)** on 1,498 public RNA-seq samples to break its transcriptome into **iModulons**: groups of genes that rise and fall together because a shared regulator controls them. The project then asks how these regulatory programs relate to each other across conditions.
