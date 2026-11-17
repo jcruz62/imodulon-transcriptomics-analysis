@@ -1,0 +1,9 @@
+iModulons: 252 | samples: 1498 | projects: 136 | conditions: 738
+Total explained variance: 66.2%
+Single-gene iModulons: 107 of 252 (42%)
+IM_109 (Ribosome) vs IM_139 (ATP synthase): sample r = 0.716, condition r = 0.715 (95% project-bootstrap CI 0.61 to 0.79), Spearman = 0.668; within-project median r = 0.64 (same sign in 86% of 88 projects)
+IM_104 (Arsenic resistance) vs IM_45 (Type IV pili): sample r = -0.337, condition r = -0.324 (95% project-bootstrap CI -0.43 to -0.22), Spearman = -0.328; within-project median r = -0.35 (same sign in 63% of 70 projects)
+PCA: PC1 17.5%, PC2 11.4%, first 10 PCs 64.8%
+Silhouette by k: k=2: 0.36, k=3: 0.26, k=4: 0.23, k=5: 0.27, k=6: 0.28, k=7: 0.27, k=8: 0.26 -> chosen k = 2
+  Cluster 0 (80 conditions): top projects = VBNC State, PmrAB, A. baumannii RNA-seq Dataset
+  Cluster 1 (658 conditions): top projects = A. baumannii Genome Assembly, AbaumPRECISE, Cefiderocol Resistance Transcriptomics

@@ -1,0 +1,3 @@
+pair,sample_level_pearson_r,condition_level_pearson_r,condition_level_spearman_rho,project_bootstrap_95ci_low,project_bootstrap_95ci_high,within_project_median_r,within_project_fraction_same_sign,n_projects_within,n_samples,n_conditions
+IM_109 (Ribosome) vs IM_139 (ATP synthase),0.716,0.715,0.668,0.612,0.791,0.641,0.86,88,1498,738
+IM_104 (Arsenic resistance) vs IM_45 (Type IV pili),-0.337,-0.324,-0.328,-0.43,-0.221,-0.346,0.63,70,1498,738
