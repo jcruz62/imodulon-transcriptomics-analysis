@@ -7,7 +7,7 @@ Original Investigation · Microbial Genomics
 
 ## Key Points
 
-**Question** Which regulatory programs in *Acinetobacter baumannii* turn on and off together, and do those relationships hold up once we account for the fact that samples come in studies?
+**Question** Which regulatory programs in *Acinetobacter baumannii* turn on and off together, and do those relationships hold up after accounting for the fact that samples come in studies?
 
 **Findings** Independent component analysis of 1,498 RNA-seq samples from 136 studies identified 252 independently modulated gene sets (iModulons) that explained 66.2% of expression variance. Ribosome and ATP synthase activity were strongly correlated (*r* = 0.71; 95% CI, 0.61-0.79), and the correlation held in 86% of individual studies. Arsenic resistance and type IV pili activity were inversely correlated (*r* = −0.32; 95% CI, −0.43 to −0.22), but in only 63% of studies.
 
@@ -41,7 +41,7 @@ Despite its clinical importance, little is known about how *A. baumannii* contro
 
 Independent component analysis (ICA) helps fill this gap. ICA is an unsupervised machine learning method that splits a gene expression matrix **X** into two parts, **X ≈ M · A**. Each column of **M** lists gene weights for one component, and the genes with large weights form an *iModulon* (an independently modulated gene set). Each row of **A** gives that iModulon's *activity* in every sample. Principal component analysis (PCA) looks for orthogonal directions of maximum variance. ICA instead looks for components that are statistically independent, which tend to line up with real regulators, because each regulator controls its own group of genes.
 
-This study asked three questions. First, which regulatory programs are active together? Second, do conditions group by their overall regulatory state? Third, do the relationships we find hold *within* individual studies, or only across them? The third question matters because samples from the same lab, strain and protocol are not independent. Ignoring that can make correlations look stronger and more certain than they are.
+This study asked three questions. First, which regulatory programs are active together? Second, do conditions group by their overall regulatory state? Third, do the relationships hold *within* individual studies, or only across them? The third question matters because samples from the same lab, strain and protocol are not independent. Ignoring that can make correlations look stronger and more certain than they are.
 
 ## Methods
 
@@ -49,7 +49,7 @@ This study asked three questions. First, which regulatory programs are active to
 RNA-seq samples were collected with BioProject and BioSample identifiers, then processed and quality-controlled with the iModulonMiner pipeline. ICA was run on log-transformed transcripts per million (log-TPM) values. iModulon membership was set by gene-weight thresholds. Metadata were curated for every project and condition, UniProt identifiers were mapped (about 100% coverage), and the dataset was uploaded to iModulonDB (0 failed validation checks). iModulons were annotated by function and regulator, for example ribosome, ATP synthase, arsenic resistance, PmrA and Fur.
 
 ### Statistical Analysis
-Biological replicates were averaged within each project-condition pair, so each condition counted once (738 conditions). We then calculated:
+Biological replicates were averaged within each project-condition pair, so each condition counted once (738 conditions). The following were then calculated:
 
 1. **Condition-level correlations** (Pearson and Spearman) between iModulon activities.
 2. **Project-level cluster bootstrap.** Whole projects were resampled with replacement 2,000 times to build 95% CIs that reflect between-study variability.
@@ -83,9 +83,9 @@ The first 2 principal components explained 17.5% and 11.4% of condition-level va
 
 ## Discussion
 
-This study found that, across almost 1,500 transcriptomes, *A. baumannii* tightly coordinates the machinery it needs to grow: ribosomes to make protein and ATP synthase to supply energy. This coupling is expected biologically, which makes it a useful check that the decomposition recovers real regulation. It also stayed strong when we stopped treating replicates and same-study samples as independent.
+This study found that, across almost 1,500 transcriptomes, *A. baumannii* tightly coordinates the machinery it needs to grow: ribosomes to make protein and ATP synthase to supply energy. This coupling is expected biologically, which makes it a useful check that the decomposition recovers real regulation. It also stayed strong once replicates and same-study samples were no longer treated as independent.
 
-The arsenic-pili relationship is more interesting but less certain. Type IV pili help *A. baumannii* twitch across surfaces and form biofilms, which are a major reason it persists in hospitals. If metal stress suppresses pili, that would point to a trade-off between detoxification and colonization. Our checks show the association is real across the dataset but inconsistent between studies. It is best treated as a **hypothesis**: that arsenic exposure reduces type IV pili expression and biofilm formation. A controlled experiment that adds arsenite to one strain and measures pili gene expression and biofilm mass would test this directly.
+The arsenic-pili relationship is more interesting but less certain. Type IV pili help *A. baumannii* twitch across surfaces and form biofilms, which are a major reason it persists in hospitals. If metal stress suppresses pili, that would point to a trade-off between detoxification and colonization. The robustness checks show the association is real across the dataset but inconsistent between studies. It is best treated as a **hypothesis**: that arsenic exposure reduces type IV pili expression and biofilm formation. A controlled experiment that adds arsenite to one strain and measures pili gene expression and biofilm mass would test this directly.
 
 ### Limitations
 First, 42% of iModulons were single-gene components, which suggests the decomposition dimension was set higher than needed and some components capture noise. Second, the samples mixed several strains (ATCC 17978, ATCC 19606, AB5075 and clinical isolates), and differences in gene content between strains can create apparent co-regulation. Third, all findings are correlational, and regulator assignments relied on a small curated regulatory network.
